@@ -5,15 +5,9 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        freq = {}
         result = []
-
-        for num in nums1:
-            freq[num] = freq.get(num, 0) + 1
-
-        for num in nums2:
-            if num in freq and freq[num] > 0:
-                result.append(num)
-                freq[num] -= 1
-
+        for i in nums1:
+            if i in nums2:
+                result.append(i)
+                nums2.remove(i)
         return result
