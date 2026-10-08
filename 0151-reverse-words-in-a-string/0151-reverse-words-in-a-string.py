@@ -1,6 +1,12 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        s = s.strip()
-        words = s.split()
-        reversed_words = words[::-1]
-        return ' '.join(reversed_words)
+        if s is None:
+            return s
+        words=s.split()
+        reverse=words[::-1]
+        output = ""
+        for word in reverse:
+            output +=  word + " "
+        return output.strip() 
+
+        
