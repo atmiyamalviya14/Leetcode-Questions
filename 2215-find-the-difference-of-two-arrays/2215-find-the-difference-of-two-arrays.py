@@ -8,3 +8,6 @@ class Solution:
             if num not in nums1:
                 answer[1].append(num)
         return answer
+
+        # set1, set2 = set(nums1), set(nums2)
+        # return [list(set1 - set2), list(set2 - set1)]
