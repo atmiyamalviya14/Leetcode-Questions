@@ -3,15 +3,13 @@ class Solution:
         stack = []
 
         for ast in asteroids:
-            while stack and ast < 0 and stack[-1] > 0:
-                if stack[-1] < abs(ast):
-                    stack.pop()
-                elif stack[-1] == abs(ast):
-                    stack.pop()
+            while stack and stack[-1] > 0 and ast < 0:
+                last = stack.pop()
+                if last > -ast:
+                    stack.append(last)
                     break
-                else:
+                elif last == -ast:
                     break
             else:
                 stack.append(ast)
-
         return stack
